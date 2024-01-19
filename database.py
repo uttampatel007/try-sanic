@@ -13,7 +13,10 @@ db_config = {
     "database": "sample_db",
 }
 
-engine = create_async_engine("mysql+aiomysql://%(user)s:%(password)s@%(host)s:%(port)s/%(database)s" % db_config, echo=True)
+engine = create_async_engine(
+    "mysql+aiomysql://%(user)s:%(password)s@%(host)s:%(port)s/%(database)s" \
+    % db_config, echo=True)
+
 Base = declarative_base()
 
 # Create an asynchronous session
